@@ -33,8 +33,8 @@ def hello_person(name):
 
 @app.route("/jedi/<first>/<second>")
 def jedi_name(first, second):
-    return "Hello {s} {f}".format(s=second, f=first)
+    return "Hello {s}{f}".format(s=second[0:3].title(), f=first[0:2])
 
 
 if __name__ == "__main__":
-   app.run(host="0.0.0.0", port=8085)
+   app.run(host="0.0.0.0", port=8080)
